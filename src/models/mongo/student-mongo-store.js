@@ -6,12 +6,13 @@ export const studentMongoStore = {
         return studentDetails;
     },
 
-async StudentDetail(firstname, college, year, information) {
+async makeStudentDetail(firstname, college, year, information, student) {
     const newStudentDetail = new StudentDetail({
         firstname,
         college,
         year,
         information,
+        student: student._id
     });
     await newStudentDetail.save();
     return newStudentDetail;

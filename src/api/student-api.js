@@ -12,16 +12,17 @@ export const studentApi = {
     },
   },
 
-  makeStudent: {
+  makeStudentDetail: {
     auth: {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const studentDetail = await db.studentStore.studentDetail(
+      const studentDetail = await db.studentStore.makeStudentDetail(
         request.payload.firstname,
         request.payload.college,
         request.payload.year,
         request.payload.information,
+        request.auth.credentials,
       );
       return studentDetail;
   },

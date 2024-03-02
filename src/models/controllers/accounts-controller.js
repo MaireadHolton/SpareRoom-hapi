@@ -7,33 +7,19 @@ export const accountsController = {
       return h.view("Main", { title: "Welcome to SpareRoom" });
     },
   },
-  showStudentSignup: {
+  showSignup: {
     auth: false,
     handler: function (request, h) {
-      return h.view("studentSignup", { title: "Sign up for SpareRoom" });
+      return h.view("Signup", { title: "Sign up for SpareRoom" });
     },
   },
-  studentSignup: {
+  Signup: {
     auth: false,
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
-      return h.redirect("/studentDetails");
+      return h.redirect("/login");
     },
-  },
-  showHomeownerSignup: {
-    auth: false,
-    handler: function (request, h) {
-      return h.view("homeownerSignup", { title: "Sign up for SpareRoom" });
-    },
-  },
-    homeownerSignup: {
-      auth: false,
-      handler: async function (request, h) {
-        const user = request.payload;
-        await db.userStore.addUser(user);
-        return h.redirect("/advert");
-      },
   },
 
   showLogin: {

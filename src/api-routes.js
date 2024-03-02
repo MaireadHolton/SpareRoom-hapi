@@ -10,10 +10,10 @@ export const apiRoutes = [
   { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
 
   { method: "GET", path: "/api/advert", config: advertsApi.findAll},
-  { method: "POST", path: "/api/{id}/advert/", config: advertsApi.makeAdvert },
+  { method: "POST", path: "/api/{id}/advert", config: advertsApi.makeAdvert },
   { method: "DELETE", path: "/api/advert", config: advertsApi.deleteAll },
 
   { method: "GET", path: "/api/studentDetail", config: studentApi.findAll},
-  { method: "POST", path: "/api/{id}/studentDetail/", config: studentApi.makeStudent },
+  { method: "POST", path: "/api/{id}/studentDetail", config: studentApi.makeStudentDetail },
   { method: "DELETE", path: "/api/studentDetail", config: studentApi.deleteAll },
 ];
