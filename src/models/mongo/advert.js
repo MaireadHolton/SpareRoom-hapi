@@ -3,18 +3,21 @@ import Mongoose, { SchemaTypes } from "mongoose";
 const { Schema } = Mongoose;
 
 const advertSchema = new Schema({
-  firstname: String,
+  firstName: String,
   college: String,
-  latitude: {
-    type: SchemaTypes.Decimal128
+  /* latitude: {
+    type: SchemaTypes.Number
   },
   longitude: {
-    type: SchemaTypes.Decimal128
-  },
+    type: SchemaTypes.Number
+  }, */
   description: String,
   rules: String,
   price: Number,
-  available: Date,
+  available: {
+    type: Date,
+    get: value => value.toDateString
+  },
   advertiser: {
     type: Schema.Types.ObjectId,
     ref: "User",

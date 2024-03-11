@@ -28,8 +28,8 @@ export const seedData = {
       one: {
         firstName: "Mary",
         college: "SETU",
-        latitude: "52.25",
-        longitude: "-7.14",
+        // latitude: 52.25,
+       // longitude: -7.14,
         description: "Double room, ensuite available. Sharing with a couple, all common areas available for use",
         rules: "Pets welcome, keep noise down after 11pm",
         price: 370,
@@ -39,8 +39,8 @@ export const seedData = {
       two: {
         firstName: "Barabara",
         college: "NUIG",
-        latitude: "53.28",
-        longitude: "-9.07",
+       // latitude: 53.28,
+        // longitude: -9.07,
         description: "single bed, shared bathroom available in close prxoimity to NUIG",
         rules: "No smoking, no parties, no overnight guests",
         price: 315,

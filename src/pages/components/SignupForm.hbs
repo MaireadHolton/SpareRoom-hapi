@@ -1,12 +1,12 @@
 <form action="/register" method="POST">
   <div class="field">
-    <label for="firstName" style="color: white" class="label">First Name</label>
-    <input class="input" id="firstName" type="text" placeholder="Enter first name" name="firstName">
-  </div>
-   <div class="field">
-    <label for="lastName" style="color: white" class="label">Last Name</label>
-    <input class="input" id="lastName" type="text" placeholder="Enter last name" name="lastName">
-  </div>
+		<label class="label" style="color: white" for="firstName">First Name</label>
+		<input class="input" id="firstName" name="firstName" placeholder="Enter first name" type="text" />
+	</div>
+	<div class="field">
+		<label class="label" style="color: white" for="lastName">Last Name</label>
+		<input class="input" id="lastName" name="lastName" placeholder="Enter last name" type="text" />
+	</div>
   <div class="field">
     <label for="email" style="color: white" class="label">Email</label>
     <input class="input" id="email" type="text" placeholder="Enter email" name="email">
@@ -16,14 +16,15 @@
     <input class="input" id="password"type="password" placeholder="Enter Password" name="password">
   </div>
   <div class="field" style="color:white">
+		<strong style="color:white; padding: 10px"> Selected: {{$user.role}}</strong>
 		<label>
-			<input type="radio" value="Homeowner"/> Homeowner
+			<input type="radio" value="Homeowner" /> Homeowner
 		</label>
 		<label>
-			<input type="radio" value="Student"/> Student
+			<input type="radio" value="Student" /> Student
 		</label>
 	</div>
   <div class="field is-grouped">
-    <button class="button is-link" style="background-color: rgb(103, 168, 233);">Student Signup</button>
+    <button class="button is-link" style="background-color: rgb(103, 168, 233);">Sign up</button>
   </div>
 </form>

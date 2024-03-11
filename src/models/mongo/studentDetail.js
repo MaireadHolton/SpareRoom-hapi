@@ -3,7 +3,7 @@ import Mongoose from "mongoose";
 const { Schema } = Mongoose;
 
 const studentDetailSchema = new Schema({
-  firstname: String,
+  firstName: String,
   college: String,
   year: Number,
   information: String,

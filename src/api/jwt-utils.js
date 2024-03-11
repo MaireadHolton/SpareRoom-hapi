@@ -11,7 +11,7 @@ export function createToken(user) {
   };
   const options = {
     algorithm: "HS256",
-    expiresIn: "1h",
+    expiresIn: "8760h",
   };
   return jwt.sign(payload, process.env.cookie_password, options);
 }

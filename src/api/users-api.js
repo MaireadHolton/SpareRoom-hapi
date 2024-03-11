@@ -3,7 +3,7 @@ import { db } from "../models/db.js";
 import { createToken } from "./jwt-utils.js";
 
 export const userApi = {
-  find: {
+ find: {
     auth: {
       strategy: "jwt",
     },
@@ -70,12 +70,12 @@ export const userApi = {
         const user = await db.userStore.getUserByEmail(request.payload.email);
         if (!user) {
           return Boom.unauthorized("User not found");
-        }
-        if (user.password !== request.payload.password) {
+        } else if (user.password !== request.payload.password) {
           return Boom.unauthorized("Invalid password");
+        } else {
+          const token = createToken(user);
+          return h.response({ success: true, token: token, role: user.role }).code(201);
         }
-        const token = createToken({ id: user._id, role: user.role});
-        return h.response({ success: true, token: token, id: user._id, role: user.role, }).code(201);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }

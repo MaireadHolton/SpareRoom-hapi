@@ -6,9 +6,9 @@ export const userMongoStore = {
     return users;
   },
 
-  async getUserById(id, role) {
+  async getUserById(id) {
     if (id) {
-      const user = await User.findOne({ _id: id }).select(role).lean();
+      const user = await User.findOne({ _id: id }).lean();
       return user;
     }
     return null;
@@ -21,8 +21,8 @@ export const userMongoStore = {
     return u;
   },
 
-  async getUserByEmail(email, role) {
-    const user = await User.findOne({ email: email }).select(role).lean();
+  async getUserByEmail(email) {
+    const user = await User.findOne({ email: email }).lean();
     return user;
   },
 
