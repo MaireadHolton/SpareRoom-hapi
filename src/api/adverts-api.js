@@ -39,8 +39,8 @@ export const advertsApi = {
       const advert = await db.advertStore.makeAdvert(
         request.payload.firstName,
         request.payload.college,
-        // request.payload.latitude,
-       // request.payload.longitude,
+        request.payload.lat,
+        request.payload.lng,
         request.payload.description,
         request.payload.rules,
         request.payload.price,

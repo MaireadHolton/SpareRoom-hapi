@@ -5,12 +5,12 @@ const { Schema } = Mongoose;
 const advertSchema = new Schema({
   firstName: String,
   college: String,
-  /* latitude: {
+  lat: {
     type: SchemaTypes.Number
   },
-  longitude: {
+  lng: {
     type: SchemaTypes.Number
-  }, */
+  }, 
   description: String,
   rules: String,
   price: Number,

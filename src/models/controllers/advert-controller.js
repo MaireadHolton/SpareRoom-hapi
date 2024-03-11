@@ -25,8 +25,7 @@ export const advertController = {
           const loggedInUser = request.auth.credentials;
           await db.advertStore.makeAdvert(
             request.payload.firstName, request.payload.college,
-            // latitude,
-            // longitude,
+            request.payload.lat, request.payload.lng,
             request.payload.description, request.payload.rules, request.payload.price,
             request.payload.available, loggedInUser._id
           );
