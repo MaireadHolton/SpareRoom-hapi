@@ -21,7 +21,8 @@ const advertSchema = new Schema({
   advertiser: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  }
+  },
+  img: String,
 });
 
 export const Advert = Mongoose.model("Advert", advertSchema);

@@ -36,21 +36,38 @@ export const advertsApi = {
     }, 
     handler: async function (request, h) {
       try {
-      const advert = await db.advertStore.makeAdvert(
-        request.payload.firstName,
-        request.payload.college,
-        request.payload.lat,
-        request.payload.lng,
-        request.payload.description,
-        request.payload.rules,
-        request.payload.price,
-        request.payload.available,
-        request.auth.credentials,
-      );
+      const {
+        firstName,
+        college,
+        lat,
+        lng,
+        description,
+        rules,
+        price,
+        available,
+        img, // Include img in the payload
+      } = request.payload;
+
+      const { credentials } = request.auth;
+
+      // Save advert to MongoDB
+      const advert = await Advert.create({
+        firstName,
+        college,
+        lat,
+        lng,
+        description,
+        rules,
+        price,
+        available,
+        img, // Save the image URL
+        advertiser: credentials.id, // Assuming you store user ID in credentials
+      });
+      
       return advert;
     } catch (error) {
-      console.error('Error creating advert:', error);
-      return h.response({ error: 'Internal Server Error' }).code(500);
+      console.error("Error creating advert:", error);
+      return h.response({ error: "Internal Server Error" }).code(500);
     }
   },
 },

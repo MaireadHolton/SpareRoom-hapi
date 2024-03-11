@@ -27,7 +27,7 @@ export const advertController = {
             request.payload.firstName, request.payload.college,
             request.payload.lat, request.payload.lng,
             request.payload.description, request.payload.rules, request.payload.price,
-            request.payload.available, loggedInUser._id
+            request.payload.available, loggedInUser._id, request.payload.img
           );
           return h.redirect("/report");
         } catch (err) {
