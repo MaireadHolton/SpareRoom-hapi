@@ -27,6 +27,7 @@ export const seedData = {
       _model: "Advert",
       one: {
         firstName: "Mary",
+        contactEmail: "marywhite@mail.com",
         college: "SETU",
         lat: 52.25,
         lng: -7.14,
@@ -34,10 +35,12 @@ export const seedData = {
         rules: "Pets welcome, keep noise down after 11pm",
         price: 370,
         available: "2024-02-29",
-        advertiser: "->users.mary"
+        img: "https://firebasestorage.googleapis.com/v0/b/spareroom-414816.appspot.com/o/images%2F1710448632063_bedroom3.jpg?alt=media&token=371449c1-7113-4dc5-baf6-24e1ce590e05",
+        advertiser: "->users.mary",
       },
       two: {
         firstName: "Barabara",
+        contactEmail: "barbarablack@mail.com",
         college: "NUIG",
         lat: 53.28,
         lng: -9.07,
@@ -45,7 +48,8 @@ export const seedData = {
         rules: "No smoking, no parties, no overnight guests",
         price: 315,
         available: "2024-02-01",
-        advertiser: "->users.barbara"
+        img: "https://firebasestorage.googleapis.com/v0/b/spareroom-414816.appspot.com/o/images%2F1710448756848_room.jpg?alt=media&token=920b14c5-85db-497b-8ade-40238659bdc2",
+        advertiser: "->users.barbara",
       }
     },
     studentDetails: {

@@ -12,9 +12,10 @@ export const advertMongoStore = {
         return advert;
     },
 
-    async makeAdvert(firstName, college, lat, lng, description, rules, price, available, advertiser, img) {
+    async makeAdvert(firstName, contactEmail, college, lat, lng, description, rules, price, available, advertiser, advertiserEmail, img) {
         const newAdvert = new Advert({
             firstName,
+            contactEmail,
             college,
             lat,
             lng,
@@ -23,6 +24,7 @@ export const advertMongoStore = {
             price,
             available,
             advertiser: advertiser._id,
+            advertiserEmail: advertiser.email,
             img
         });
         await newAdvert.save();
@@ -31,6 +33,7 @@ export const advertMongoStore = {
 
     async updateAdvert(advert, updatedAdvert) {
         advert.firstName = updatedAdvert.firstName;
+        advert.contactEmail = updatedAdvert.contactEmail
         advert.college = updatedAdvert.college;
         advert.lat = updatedAdvert.lat;
         advert.lng = updatedAdvert.lng;

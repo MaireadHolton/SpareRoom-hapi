@@ -4,6 +4,7 @@ const { Schema } = Mongoose;
 
 const advertSchema = new Schema({
   firstName: String,
+  contactEmail: String,
   college: String,
   lat: {
     type: SchemaTypes.Number

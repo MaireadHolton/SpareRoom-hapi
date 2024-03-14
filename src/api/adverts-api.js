@@ -38,6 +38,7 @@ export const advertsApi = {
       try {
       const {
         firstName,
+        contactEmail,
         college,
         lat,
         lng,
@@ -45,7 +46,7 @@ export const advertsApi = {
         rules,
         price,
         available,
-        img, // Include img in the payload
+        img, 
       } = request.payload;
 
       const { credentials } = request.auth;
@@ -53,6 +54,7 @@ export const advertsApi = {
       // Save advert to MongoDB
       const advert = await Advert.create({
         firstName,
+        contactEmail,
         college,
         lat,
         lng,
@@ -60,10 +62,10 @@ export const advertsApi = {
         rules,
         price,
         available,
-        img, // Save the image URL
-        advertiser: credentials.id, // Assuming you store user ID in credentials
+        img,
+        advertiser: credentials.id,
       });
-      
+
       return advert;
     } catch (error) {
       console.error("Error creating advert:", error);

@@ -24,7 +24,7 @@ export const advertController = {
         try {
           const loggedInUser = request.auth.credentials;
           await db.advertStore.makeAdvert(
-            request.payload.firstName, request.payload.college,
+            request.payload.firstName, request.payload.contactEmail, request.payload.college,
             request.payload.lat, request.payload.lng,
             request.payload.description, request.payload.rules, request.payload.price,
             request.payload.available, loggedInUser._id, request.payload.img
